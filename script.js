@@ -17,8 +17,8 @@ massJohn = 70;
 heightMark = 170;
 massMark = 85;
 
-bmiJohn = heightJohn * heightJohn / massJohn;
-bmiMark = heightMark * heightMark / massMark;
+bmiJohn = massJohn / (heightJohn * heightJohn);
+bmiMark = massMark / (heightMark * heightMark);
 
 higherBmi = bmiMark > bmiJohn;
 
