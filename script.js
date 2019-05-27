@@ -10,6 +10,8 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true"). 
 */
 
+/* SOLUTION
+
 var bmiJohn, bmiMark, heightJohn, heightMark, massJohn, massMark;
 
 heightJohn = 180; // centimeters
@@ -26,6 +28,7 @@ if (bmiMark > bmiJohn) {
 } else {
   console.log('John\'s BMI is higher than Mark\'s.');
 }
+*/
 
 /*****************************
 * CODING CHALLENGE 2
@@ -39,3 +42,17 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
 5. Like before, change the scores to generate different winners, keeping in mind there might be draws.
 */
+
+/* SOLUTION */
+var teamJohnAvgScore, teamMarkAvgScore;
+
+teamJohnAvgScore = (89 + 120 + 103) / 3;
+teamMarkAvgScore = (116 + 94 + 123) / 3;
+
+if (teamJohnAvgScore === teamMarkAvgScore) {
+  console.log('It\'s a draw and both teams scored ' + teamJohnAvgScore + ' points!');
+} else if (teamJohnAvgScore > teamMarkAvgScore) {
+  console.log('John\'s team wins and scored ' + teamJohnAvgScore + ' points!');
+} else {
+  console.log('Mark\'s team wins and scored ' + teamMarkAvgScore + ' points!');
+}
