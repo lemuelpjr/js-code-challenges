@@ -41,7 +41,8 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score).
 */
 
-/* SOLUTION */
+/* SOLUTION 
+
 var teamJohnAvgScore, teamMarkAvgScore;
 
 teamJohnAvgScore = (89 + 120 + 103) / 3;
@@ -54,3 +55,17 @@ if (teamJohnAvgScore === teamMarkAvgScore) {
 } else {
   console.log('Mark\'s team wins and scored ' + teamMarkAvgScore + ' points!');
 }
+*/
+
+/*****************************
+ * CODING CHALLENGE 3
+ */
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+*/
