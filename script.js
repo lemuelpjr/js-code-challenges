@@ -69,3 +69,30 @@ In the end, John would like to have 2 arrays:
 2) Containing all three final paid amounts (bill + tip).
 (NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
 */
+
+/* SOLUTION */
+function tipCalculator(bill) {
+  var tip;
+
+  if (bill < 50) {
+    tip = bill * 0.2;
+  } else if (bill >= 50 && bill <= 200) {
+    tip = bill * 0.15;
+  } else {
+    tip = bill * 0.1;
+  }
+
+  return tip;
+}
+
+var tips = [], finalCheck = [];
+
+tips[0] = tipCalculator(124);
+tips[1] = tipCalculator(48);
+tips[2] = tipCalculator(268);
+
+finalCheck[0] = 124 + tips[0];
+finalCheck[1] = 48 + tips[1];
+finalCheck[2] = 268 + tips[2];
+
+console.log(tips, finalCheck);
