@@ -117,8 +117,9 @@ var john = {
   fullName: 'John Doe',
   mass: 78, // kg
   height: 1.8, // meters
-  bmi: function() {
-    return this.mass / this.height ** 2;
+  calcBMI: function() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
   }
 };
 
@@ -126,15 +127,16 @@ var mark = {
   fullName: 'Mark Smith',
   mass: 84, // kg
   height: 1.75, // meters
-  bmi: function () {
-    return this.mass / this.height ** 2;
+  calcBMI: function() {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
   }
 };
 
-if (john.bmi() > mark.bmi()) {
-  console.log(john.fullName + ' has the highest BMI: ' + john.bmi());
-} else if (mark.bmi() > john.bmi()) {
-  console.log(mark.fullName + ' has the highest BMI: ' + mark.bmi());
+if (john.calcBMI() > mark.calcBMI()) {
+  console.log(john.fullName + ' has the highest BMI: ' + john.bmi);
+} else if (mark.bmi > john.bmi) {
+  console.log(mark.fullName + ' has the highest BMI: ' + mark.bmi);
 } else {
   console.log(john.fullName + ' and ' + mark.fullName + ' have the same BMI.');
 }
