@@ -163,34 +163,34 @@ Implement a tip calculator using objects and loops:
 
 /* SOLUTION */
 var restaurantMeal = {
-  bills: [],
-  tips: [],
-  finalCheks: [],
+  bills: [124, 48, 268, 180, 42],
   // method to calculate the tips
   tipCalc: function() {
+    this.tips = [];
+    this.finalCheks = [];
+
     for (var i = 0; i < this.bills.length; i++) {
-      if (this.bills[i] < 50) {
+      var bill = this.bills[i];
+      var percentage;
+
+      // calculate tip percentage for each value
+      if (bill < 50) {
         // tip is 20% if bill is less than $50
-        this.tips.push(this.bills[i] * 0.2);
-        this.finalCheks.push(this.bills[i] + this.tips[i]);
-      } else if (this.bills[i] >= 50 && this.bills[i] <= 200) {
+        percentage = 0.2;
+      } else if (bill >= 50 && bill <= 200) {
         // tip is 15% if bill is between $50 and $200
-        this.tips.push(this.bills[i] * 0.15);
-        this.finalCheks.push(this.bills[i] + this.tips[i]);
+        percentage = 0.15;
       } else {
         // tip is 10% if bill is more than $200
-        this.tips.push(this.bills[i] * 0.1);
-        this.finalCheks.push(this.bills[i] + this.tips[i]);
+        percentage = 0.1;
       }
+
+      // add tips to the corresponding arrays
+      this.tips[i] = bill * percentage;
+      this.finalCheks[i] = bill + bill * percentage;
     }
   }
 };
-
-restaurantMeal.bills.push(124);
-restaurantMeal.bills.push(48);
-restaurantMeal.bills.push(268);
-restaurantMeal.bills.push(180);
-restaurantMeal.bills.push(42);
 
 restaurantMeal.tipCalc();
 
