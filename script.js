@@ -161,7 +161,8 @@ Implement a tip calculator using objects and loops:
 4. As an output, create 1) a new array containing all tips, and 2) an array containing final paid amounts (bill + tip). HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
 */
 
-/* SOLUTION */
+/* SOLUTION
+
 var restaurantMeal = {
   bills: [124, 48, 268, 180, 42],
   // method to calculate the tips
@@ -196,6 +197,7 @@ restaurantMeal.tipCalc();
 
 console.log(restaurantMeal.tips);
 console.log(restaurantMeal.finalCheks);
+*/
 
 /*****************************
 * CODING CHALLENGE 5.2
@@ -210,3 +212,85 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 7. Calculate the average tip for each family
 8. Log to the console which family paid the highest tips on average
 */
+
+/* SOLUTION */
+var johnAverage, markAverage;
+
+function averageCalc(tips) {
+  var sum = 0;
+
+  for (var i = 0; i < tips.length; i++) {
+    sum += tips[i];
+  }
+
+  return sum / tips.length;
+}
+
+// John's  holiday meals
+var johnMeals = {
+  bills: [124, 48, 268, 180, 42],
+  // method to calculate the tips
+  tipCalc: function () {
+    this.tips = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var bill = this.bills[i];
+      var percentage;
+
+      // calculate tip percentage for each value
+      if (bill < 50) {
+        // tip is 20% if bill is less than $50
+        percentage = 0.2;
+      } else if (bill >= 50 && bill <= 200) {
+        // tip is 15% if bill is between $50 and $200
+        percentage = 0.15;
+      } else {
+        // tip is 10% if bill is more than $200
+        percentage = 0.1;
+      }
+
+      // add tips to the array
+      this.tips[i] = bill * percentage;
+    }
+  }
+};
+
+// Mark's  holiday meals
+var markMeals = {
+  bills: [77, 375, 110, 45],
+  // method to calculate the tips
+  tipCalc: function () {
+    this.tips = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var bill = this.bills[i];
+      var percentage;
+
+      // calculate tip percentage for each value
+      if (bill < 100) {
+        // tip is 20% if bill is less than $100
+        percentage = 0.2;
+      } else if (bill >= 100 && bill <= 300) {
+        // tip is 10% if bill is between $100 and $300
+        percentage = 0.1;
+      } else {
+        // tip is 25% if bill is more than $300
+        percentage = 0.25;
+      }
+
+      // add tips to the array
+      this.tips[i] = bill * percentage;
+    }
+  }
+};
+
+johnMeals.tipCalc();
+markMeals.tipCalc();
+johnAverage = averageCalc(johnMeals.tips);
+markAverage = averageCalc(markMeals.tips);
+
+if (johnAverage > markAverage) {
+  console.log('John\'s family paid the heighst tip on average with a total of $' + johnAverage);
+} else {
+  console.log('Mark\'s family paid the heighst tip on average with a total of $' + markAverage);
+}
