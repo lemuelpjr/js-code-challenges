@@ -214,8 +214,6 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 */
 
 /* SOLUTION */
-var johnAverage, markAverage;
-
 function averageCalc(tips) {
   var sum = 0;
 
@@ -286,11 +284,15 @@ var markMeals = {
 
 johnMeals.tipCalc();
 markMeals.tipCalc();
-johnAverage = averageCalc(johnMeals.tips);
-markAverage = averageCalc(markMeals.tips);
+johnMeals.average = averageCalc(johnMeals.tips);
+markMeals.average = averageCalc(markMeals.tips);
 
-if (johnAverage > markAverage) {
-  console.log('John\'s family paid the heighst tip on average with a total of $' + johnAverage);
+console.log(johnMeals, markMeals);
+
+if (johnMeals.average > markMeals.average) {
+  console.log('John\'s family paid the heighst tip on average with a total of $' + johnMeals.average);
+} else if (johnMeals.average < markMeals.average) {
+  console.log('Mark\'s family paid the heighst tip on average with a total of $' + markMeals.average);
 } else {
-  console.log('Mark\'s family paid the heighst tip on average with a total of $' + markAverage);
+  console.log('Both familis paid the same tip on average with a total of $' + johnMeals.average);
 }
