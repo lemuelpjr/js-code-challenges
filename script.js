@@ -214,85 +214,110 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 */
 
 /* SOLUTION */
-function averageCalc(tips) {
-  var sum = 0;
 
-  for (var i = 0; i < tips.length; i++) {
-    sum += tips[i];
-  }
+// function averageCalc(tips) {
+//   var sum = 0;
 
-  return sum / tips.length;
-}
+//   for (var i = 0; i < tips.length; i++) {
+//     sum += tips[i];
+//   }
 
-// John's  holiday meals
-var johnMeals = {
-  bills: [124, 48, 268, 180, 42],
-  // method to calculate the tips
-  tipCalc: function () {
-    this.tips = [];
+//   return sum / tips.length;
+// }
 
-    for (var i = 0; i < this.bills.length; i++) {
-      var bill = this.bills[i];
-      var percentage;
+// // John's  holiday meals
+// var johnMeals = {
+//   bills: [124, 48, 268, 180, 42],
+//   // method to calculate the tips
+//   tipCalc: function () {
+//     this.tips = [];
 
-      // calculate tip percentage for each value
-      if (bill < 50) {
-        // tip is 20% if bill is less than $50
-        percentage = 0.2;
-      } else if (bill >= 50 && bill <= 200) {
-        // tip is 15% if bill is between $50 and $200
-        percentage = 0.15;
-      } else {
-        // tip is 10% if bill is more than $200
-        percentage = 0.1;
-      }
+//     for (var i = 0; i < this.bills.length; i++) {
+//       var bill = this.bills[i];
+//       var percentage;
 
-      // add tips to the array
-      this.tips[i] = bill * percentage;
-    }
-  }
-};
+//       // calculate tip percentage for each value
+//       if (bill < 50) {
+//         // tip is 20% if bill is less than $50
+//         percentage = 0.2;
+//       } else if (bill >= 50 && bill <= 200) {
+//         // tip is 15% if bill is between $50 and $200
+//         percentage = 0.15;
+//       } else {
+//         // tip is 10% if bill is more than $200
+//         percentage = 0.1;
+//       }
 
-// Mark's  holiday meals
-var markMeals = {
-  bills: [77, 375, 110, 45],
-  // method to calculate the tips
-  tipCalc: function () {
-    this.tips = [];
+//       // add tips to the array
+//       this.tips[i] = bill * percentage;
+//     }
+//   }
+// };
 
-    for (var i = 0; i < this.bills.length; i++) {
-      var bill = this.bills[i];
-      var percentage;
+// // Mark's  holiday meals
+// var markMeals = {
+//   bills: [77, 375, 110, 45],
+//   // method to calculate the tips
+//   tipCalc: function () {
+//     this.tips = [];
 
-      // calculate tip percentage for each value
-      if (bill < 100) {
-        // tip is 20% if bill is less than $100
-        percentage = 0.2;
-      } else if (bill >= 100 && bill <= 300) {
-        // tip is 10% if bill is between $100 and $300
-        percentage = 0.1;
-      } else {
-        // tip is 25% if bill is more than $300
-        percentage = 0.25;
-      }
+//     for (var i = 0; i < this.bills.length; i++) {
+//       var bill = this.bills[i];
+//       var percentage;
 
-      // add tips to the array
-      this.tips[i] = bill * percentage;
-    }
-  }
-};
+//       // calculate tip percentage for each value
+//       if (bill < 100) {
+//         // tip is 20% if bill is less than $100
+//         percentage = 0.2;
+//       } else if (bill >= 100 && bill <= 300) {
+//         // tip is 10% if bill is between $100 and $300
+//         percentage = 0.1;
+//       } else {
+//         // tip is 25% if bill is more than $300
+//         percentage = 0.25;
+//       }
 
-johnMeals.tipCalc();
-markMeals.tipCalc();
-johnMeals.average = averageCalc(johnMeals.tips);
-markMeals.average = averageCalc(markMeals.tips);
+//       // add tips to the array
+//       this.tips[i] = bill * percentage;
+//     }
+//   }
+// };
 
-console.log(johnMeals, markMeals);
+// johnMeals.tipCalc();
+// markMeals.tipCalc();
+// johnMeals.average = averageCalc(johnMeals.tips);
+// markMeals.average = averageCalc(markMeals.tips);
 
-if (johnMeals.average > markMeals.average) {
-  console.log('John\'s family paid the heighst tip on average with a total of $' + johnMeals.average);
-} else if (johnMeals.average < markMeals.average) {
-  console.log('Mark\'s family paid the heighst tip on average with a total of $' + markMeals.average);
-} else {
-  console.log('Both familis paid the same tip on average with a total of $' + johnMeals.average);
-}
+// console.log(johnMeals, markMeals);
+
+// if (johnMeals.average > markMeals.average) {
+//   console.log('John\'s family paid the heighst tip on average with a total of $' + johnMeals.average);
+// } else if (johnMeals.average < markMeals.average) {
+//   console.log('Mark\'s family paid the heighst tip on average with a total of $' + markMeals.average);
+// } else {
+//   console.log('Both familis paid the same tip on average with a total of $' + johnMeals.average);
+// }
+
+/*****************************
+* CODING CHALLENGE 6.1
+*/
+
+/*
+--- Let's build a fun quiz game in the console! ---
+1. Build a function constructor called Question to describe a question. A question should include:
+a) question itself
+b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+c) correct answer (I would use a number for this)
+
+2. Create a couple of questions using the constructor
+
+3. Store them all inside an array
+
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
+
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+
+6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+
+7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+*/
