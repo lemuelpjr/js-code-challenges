@@ -1,7 +1,5 @@
 # JavaScript Code Challenges
 
-This repository is a compilation of some JavaScript exercises that I find throughout my coding experience.
+This repository is a compilation of some JavaScript exercises that I did during my 100 days of code challenge.
 
-I'll mainly use it during my 100 days of code challenge.
-
-Until this version all exercises are outputed on the browser console.
+All exercises are outputed on the browser console.
