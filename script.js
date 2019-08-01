@@ -340,14 +340,12 @@ Question.prototype.displayQuestions = function() {
 
 // Check if answer is correct
 Question.prototype.checkAnswer = function(chosenQuestion) {
-  var userAnswer = prompt('Open the console to see the question and enter the number of your answer here:');
-  console.log(userAnswer);
-  console.log(allQuestions[chosenQuestion].correctAnswer);
-  // if (userAnswer === allQuestions[chosenQuestion].correctAnswer) {
-  //   console.log('Correct answer! Please reload the page to try again.');
-  // } else {
-  //   console.log('Wrong answer! Please reload the page to try again.');
-  // }
+  var userAnswer = prompt('Open the console to see the question and enter the number corresponding your answer here:');
+  if (userAnswer == allQuestions[chosenQuestion].correctAnswer) {
+    console.log('Correct answer! Please reload the page to try again.');
+  } else {
+    console.log('Wrong answer! Please reload the page to try again.');
+  }
 };
 
 // Question strings
