@@ -331,7 +331,7 @@ function Question(question, answers, correctAnswer) {
 }
 
 // Display questions on console
-function displayQuestions() {
+Question.prototype.displayQuestions = function () {
   console.log(question1.question);
   for (var i = 0; i < firstAnswers.length; i++) {
     console.log(question1.answers[i]);
@@ -353,4 +353,4 @@ var question2 = new Question(secondQuestion, secondAnswers, 1);
 var allQuestions = [question1, question2];
 
 // console.log(allQuestions);
-displayQuestions();
+Question.prototype.displayQuestions();
