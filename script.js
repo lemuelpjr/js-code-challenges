@@ -332,23 +332,25 @@ function Question(question, answers, correctAnswer) {
 
 // Display questions on console
 function displayQuestions() {
-  // code here
+  console.log(question1.question);
+  for (var i = 0; i < firstAnswers.length; i++) {
+    console.log(question1.answers[i]);
+  }
 }
 
 // Question strings
-var firstQuestion = '1 - Which one of these was a painter?';
+var firstQuestion = '1) Which one of these was a painter?';
 var firstAnswers = ['1 - John Lenon', '2 - Van Gogh'];
 
-var secondQuestion = '2 - Which country is not from Europe?';
+var secondQuestion = '2) Which country is not from Europe?';
 var secondAnswers = ['1 - Colombia', '2 - France'];
 
 // Question instances
 var question1 = new Question(firstQuestion, firstAnswers, 2);
 var question2 = new Question(secondQuestion, secondAnswers, 1);
 
-// Collectio of all questions
+// Collection of all questions
 var allQuestions = [question1, question2];
 
-// console.log(question1);
-// console.log(question2);
-console.log(allQuestions);
+// console.log(allQuestions);
+displayQuestions();
