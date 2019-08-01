@@ -332,25 +332,30 @@ function Question(question, answers, correctAnswer) {
 
 // Display questions on console
 Question.prototype.displayQuestions = function () {
-  console.log(question1.question);
-  for (var i = 0; i < firstAnswers.length; i++) {
-    console.log(question1.answers[i]);
+  var chosenQuestion = 1;
+  console.log(allQuestions[chosenQuestion].question);
+  for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
+    console.log(allQuestions[chosenQuestion].answers[i]);
   }
 }
 
 // Question strings
 var firstQuestion = '1) Which one of these was a painter?';
-var firstAnswers = ['1 - John Lenon', '2 - Van Gogh'];
+var firstAnswers = ['1 - John Lenon', '2 - Van Gogh', '3 - Ronaldinho'];
 
 var secondQuestion = '2) Which country is not from Europe?';
-var secondAnswers = ['1 - Colombia', '2 - France'];
+var secondAnswers = ['1 - Colombia', '2 - France', '3 - Netherlands'];
+
+var thirdQuestion = '3) Which one of these numbers is prime?';
+var thirdAnswer = ['1 - number 25', '2 - number 17', '3 - 33'];
 
 // Question instances
 var question1 = new Question(firstQuestion, firstAnswers, 2);
 var question2 = new Question(secondQuestion, secondAnswers, 1);
+var question3 = new Question(thirdQuestion, thirdAnswer, 2);
 
 // Collection of all questions
-var allQuestions = [question1, question2];
+var allQuestions = [question1, question2, question3];
 
 // console.log(allQuestions);
 Question.prototype.displayQuestions();
