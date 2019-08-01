@@ -304,6 +304,7 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 
 /*
 --- Let's build a fun quiz game in the console! ---
+
 1. Build a function constructor called Question to describe a question. A question should include:
 a) question itself
 b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
@@ -321,3 +322,10 @@ c) correct answer (I would use a number for this)
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
+
+// Question constructor
+function Question(question, answers, correctAnswer) {
+  this.question = question;
+  this.answers = answers;
+  this.correctAnswer = correctAnswer;
+}
