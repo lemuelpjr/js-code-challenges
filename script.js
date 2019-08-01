@@ -332,7 +332,7 @@ function Question(question, answers, correctAnswer) {
 
 // Display questions on console
 Question.prototype.displayQuestions = function () {
-  var chosenQuestion = 1;
+  var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
   console.log(allQuestions[chosenQuestion].question);
   for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
     console.log(allQuestions[chosenQuestion].answers[i]);
