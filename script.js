@@ -318,7 +318,7 @@ c) correct answer (I would use a number for this)
 
 5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
 
-6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+6. Check if the answer is correct and print to the console whether the answer is correct or not (Hint: write another method for this).
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
@@ -357,5 +357,9 @@ var question3 = new Question(thirdQuestion, thirdAnswer, 2);
 // Collection of all questions
 var allQuestions = [question1, question2, question3];
 
-// console.log(allQuestions);
+// QUIZ START
 Question.prototype.displayQuestions();
+
+var userAnswer = prompt('Open the console to see the question and enter the number of your answer here:');
+
+console.log(userAnswer);
