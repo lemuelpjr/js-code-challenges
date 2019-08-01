@@ -331,13 +331,24 @@ function Question(question, answers, correctAnswer) {
 }
 
 // Display questions on console
-Question.prototype.displayQuestions = function () {
-  var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
+Question.prototype.displayQuestions = function() {
   console.log(allQuestions[chosenQuestion].question);
   for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
     console.log(allQuestions[chosenQuestion].answers[i]);
   }
-}
+};
+
+// Check if answer is correct
+Question.prototype.checkAnswer = function(chosenQuestion) {
+  var userAnswer = prompt('Open the console to see the question and enter the number of your answer here:');
+  console.log(userAnswer);
+  console.log(allQuestions[chosenQuestion].correctAnswer);
+  // if (userAnswer === allQuestions[chosenQuestion].correctAnswer) {
+  //   console.log('Correct answer! Please reload the page to try again.');
+  // } else {
+  //   console.log('Wrong answer! Please reload the page to try again.');
+  // }
+};
 
 // Question strings
 var firstQuestion = '1) Which one of these was a painter?';
@@ -358,8 +369,9 @@ var question3 = new Question(thirdQuestion, thirdAnswer, 2);
 var allQuestions = [question1, question2, question3];
 
 // QUIZ START
-Question.prototype.displayQuestions();
+// Choose random question to be displayed
+var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
 
-var userAnswer = prompt('Open the console to see the question and enter the number of your answer here:');
-
-console.log(userAnswer);
+// Call methods for interaction with user
+Question.prototype.displayQuestions(chosenQuestion);
+Question.prototype.checkAnswer(chosenQuestion);
