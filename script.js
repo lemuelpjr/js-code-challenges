@@ -323,53 +323,56 @@ c) correct answer (I would use a number for this)
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
 
-// Question constructor
-function Question(question, answers, correctAnswer) {
-  this.question = question;
-  this.answers = answers;
-  this.correctAnswer = correctAnswer;
-}
-
-// Display questions on console
-Question.prototype.displayQuestions = function() {
-  console.log(allQuestions[chosenQuestion].question);
-  for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
-    console.log(allQuestions[chosenQuestion].answers[i]);
+// Self-invoking function for data privacy
+(function() {
+  // Question constructor
+  function Question(question, answers, correctAnswer) {
+    this.question = question;
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
   }
-};
 
-// Check if answer is correct
-Question.prototype.checkAnswer = function(chosenQuestion) {
-  var userAnswer = prompt('Open the console to see the question and enter the number corresponding your answer here:');
-  if (userAnswer == allQuestions[chosenQuestion].correctAnswer) {
-    console.log('Correct answer! Please reload the page to try again.');
-  } else {
-    console.log('Wrong answer! Please reload the page to try again.');
-  }
-};
+  // Display questions on console
+  Question.prototype.displayQuestions = function () {
+    console.log(allQuestions[chosenQuestion].question);
+    for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
+      console.log(allQuestions[chosenQuestion].answers[i]);
+    }
+  };
 
-// Question strings
-var firstQuestion = '1) Which one of these was a painter?';
-var firstAnswers = ['1 - John Lenon', '2 - Van Gogh', '3 - Ronaldinho'];
+  // Check if answer is correct
+  Question.prototype.checkAnswer = function (chosenQuestion) {
+    var userAnswer = prompt('Open the console to see the question and enter the number corresponding your answer here:');
+    if (userAnswer == allQuestions[chosenQuestion].correctAnswer) {
+      console.log('Correct answer! Please reload the page to try again.');
+    } else {
+      console.log('Wrong answer! Please reload the page to try again.');
+    }
+  };
 
-var secondQuestion = '2) Which country is not from Europe?';
-var secondAnswers = ['1 - Colombia', '2 - France', '3 - Netherlands'];
+  // Question strings
+  var firstQuestion = '1) Which one of these was a painter?';
+  var firstAnswers = ['1 - John Lenon', '2 - Van Gogh', '3 - Ronaldinho'];
 
-var thirdQuestion = '3) Which one of these numbers is prime?';
-var thirdAnswer = ['1 - number 25', '2 - number 17', '3 - 33'];
+  var secondQuestion = '2) Which country is not from Europe?';
+  var secondAnswers = ['1 - Colombia', '2 - France', '3 - Netherlands'];
 
-// Question instances
-var question1 = new Question(firstQuestion, firstAnswers, 2);
-var question2 = new Question(secondQuestion, secondAnswers, 1);
-var question3 = new Question(thirdQuestion, thirdAnswer, 2);
+  var thirdQuestion = '3) Which one of these numbers is prime?';
+  var thirdAnswer = ['1 - number 25', '2 - number 17', '3 - 33'];
 
-// Collection of all questions
-var allQuestions = [question1, question2, question3];
+  // Question instances
+  var question1 = new Question(firstQuestion, firstAnswers, 2);
+  var question2 = new Question(secondQuestion, secondAnswers, 1);
+  var question3 = new Question(thirdQuestion, thirdAnswer, 2);
 
-// QUIZ START
-// Choose random question to be displayed
-var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
+  // Collection of all questions
+  var allQuestions = [question1, question2, question3];
 
-// Call methods for interaction with user
-Question.prototype.displayQuestions(chosenQuestion);
-Question.prototype.checkAnswer(chosenQuestion);
+  // QUIZ START
+  // Choose random question to be displayed
+  var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
+
+  // Call methods for interaction with user
+  Question.prototype.displayQuestions(chosenQuestion);
+  Question.prototype.checkAnswer(chosenQuestion);
+})();
