@@ -7,7 +7,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 1. Store Mark's and John's mass and height in variables
 2. Calculate both their BMIs
 3. Create a boolean variable containing information about whether Mark has a higher BMI than John.
-4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true"). 
+4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true").
 */
 
 /* SOLUTION
@@ -41,7 +41,7 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score).
 */
 
-/* SOLUTION 
+/* SOLUTION
 
 var teamJohnAvgScore, teamMarkAvgScore;
 
@@ -299,7 +299,7 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 // }
 
 /*****************************
-* CODING CHALLENGE 6.1
+* CODING CHALLENGE 6
 */
 
 /*
@@ -324,55 +324,73 @@ c) correct answer (I would use a number for this)
 */
 
 // Self-invoking function for data privacy
-(function() {
-  // Question constructor
-  function Question(question, answers, correctAnswer) {
-    this.question = question;
-    this.answers = answers;
-    this.correctAnswer = correctAnswer;
-  }
+// (function() {
+//   // Question constructor
+//   function Question(question, answers, correctAnswer) {
+//     this.question = question;
+//     this.answers = answers;
+//     this.correctAnswer = correctAnswer;
+//   }
 
-  // Display questions on console
-  Question.prototype.displayQuestions = function () {
-    console.log(allQuestions[chosenQuestion].question);
-    for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
-      console.log(allQuestions[chosenQuestion].answers[i]);
-    }
-  };
+//   // Display questions on console
+//   Question.prototype.displayQuestions = function () {
+//     console.log(allQuestions[chosenQuestion].question);
+//     for (var i = 0; i < allQuestions[chosenQuestion].answers.length; i++) {
+//       console.log(allQuestions[chosenQuestion].answers[i]);
+//     }
+//   };
 
-  // Check if answer is correct
-  Question.prototype.checkAnswer = function (chosenQuestion) {
-    var userAnswer = prompt('Open the console to see the question and enter the number corresponding your answer here:');
-    if (userAnswer == allQuestions[chosenQuestion].correctAnswer) {
-      console.log('Correct answer! Please reload the page to try again.');
-    } else {
-      console.log('Wrong answer! Please reload the page to try again.');
-    }
-  };
+//   // Check if answer is correct
+//   Question.prototype.checkAnswer = function (chosenQuestion) {
+//     var userAnswer = prompt('Open the console to see the question and enter the number corresponding your answer here:');
+//     if (userAnswer == allQuestions[chosenQuestion].correctAnswer) {
+//       console.log('Correct answer! Please reload the page to try again.');
+//     } else {
+//       console.log('Wrong answer! Please reload the page to try again.');
+//     }
+//   };
 
-  // Question strings
-  var firstQuestion = '1) Which one of these was a painter?';
-  var firstAnswers = ['1 - John Lenon', '2 - Van Gogh', '3 - Ronaldinho'];
+//   // Question strings
+//   var firstQuestion = '1) Which one of these was a painter?';
+//   var firstAnswers = ['1 - John Lenon', '2 - Van Gogh', '3 - Ronaldinho'];
 
-  var secondQuestion = '2) Which country is not from Europe?';
-  var secondAnswers = ['1 - Colombia', '2 - France', '3 - Netherlands'];
+//   var secondQuestion = '2) Which country is not from Europe?';
+//   var secondAnswers = ['1 - Colombia', '2 - France', '3 - Netherlands'];
 
-  var thirdQuestion = '3) Which one of these numbers is prime?';
-  var thirdAnswer = ['1 - number 25', '2 - number 17', '3 - 33'];
+//   var thirdQuestion = '3) Which one of these numbers is prime?';
+//   var thirdAnswer = ['1 - number 25', '2 - number 17', '3 - 33'];
 
-  // Question instances
-  var question1 = new Question(firstQuestion, firstAnswers, 2);
-  var question2 = new Question(secondQuestion, secondAnswers, 1);
-  var question3 = new Question(thirdQuestion, thirdAnswer, 2);
+//   // Question instances
+//   var question1 = new Question(firstQuestion, firstAnswers, 2);
+//   var question2 = new Question(secondQuestion, secondAnswers, 1);
+//   var question3 = new Question(thirdQuestion, thirdAnswer, 2);
 
-  // Collection of all questions
-  var allQuestions = [question1, question2, question3];
+//   // Collection of all questions
+//   var allQuestions = [question1, question2, question3];
 
-  // QUIZ START
-  // Choose random question to be displayed
-  var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
+//   // QUIZ START
+//   // Choose random question to be displayed
+//   var chosenQuestion = Math.floor(Math.random() * allQuestions.length);
 
-  // Call methods for interaction with user
-  Question.prototype.displayQuestions(chosenQuestion);
-  Question.prototype.checkAnswer(chosenQuestion);
-})();
+//   // Call methods for interaction with user
+//   Question.prototype.displayQuestions(chosenQuestion);
+//   Question.prototype.checkAnswer(chosenQuestion);
+// })();
+
+/////////////////////////////////////////
+// FINAL CODING CHALLENGE FOR THIS COURSE
+
+/*
+Suppose that you're working in a small town administration, and you're in charge of two town elements:
+1. Parks
+2. Streets
+It's a very small town, so right now there are only 3 parks and 4 streets. All parks and streets have a name and a build year.
+At an end-of-year meeting, your boss wants a final report with the following:
+1. Tree density of each park in the town (formula: number of trees/park area)
+2. Average age of each town's park (formula: sum of all ages/number of parks)
+3. The name of the park that has more than 1000 trees
+4. Total and average length of the town's streets
+5. Size classification of all streets: tiny/small/normal/big/huge. If the size is unknown, the default is normal
+All the report data should be printed to the console.
+HINT: Use some of the ES6 features: classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
+*/
